@@ -12,7 +12,7 @@ Write your code in this editor and press "Run" button to compile and execute it.
 using namespace std;
 
 int main() {// Inicio de la función principal
-    // Declaración de variables y Código de la función principal ...
+    // Declaración de variables que almacenan la infomacion personal del usuario y Código de la función principal ...
     string nombre = "";
     string apellido_paterno = "";
     string apellido_materno = "";
@@ -24,8 +24,7 @@ int main() {// Inicio de la función principal
 //Mensajes Iniciales:
     cout << "Cálculo de RFC" << endl; //Mensaje de salida y titulo del programa.
     cout << "Utiliza mayúsculas" << endl; //Mensaje de salida y instruccion principal para que el usuario comprenda con claridad como debe ingresar los datos
-
-    // Estructuras repetitivas (do-while loops)
+//Estructuras y bucles
     // Validación de entrada para el primer nombre
     do {
         cout << "Introduce tu primer nombre: ";// Solicitud de entrada del Primer Nombre (con Validación).
@@ -110,7 +109,7 @@ int main() {// Inicio de la función principal
         }
     } while (true); // Fin del bucle do-while
 
-    // Salidas
+    // Salidas de datos
     cout << "Tu nombre es: " << nombre << " " << apellido_paterno << " " << apellido_materno << endl;// Muestra los datos ingresados por el usuario
     cout << "Tu fecha de nacimiento es: " << dia << "/" << mes << "/" << anio << endl;// Muestra los datos ingresados por el usuario
 
@@ -126,10 +125,10 @@ int main() {// Inicio de la función principal
         }
     }
 
-    // Tipo de estructura: Secuencia
+   
 // Construcción del RFC:
     RFC = apellido_paterno.substr(0, 1); //Se toma la primera letra del apellido paterno.
-    RFC += vocal; // Primera vocal que encontramos en el ciclo - Se agrega la primera vocal encontrada en el apellido paterno.
+    RFC += vocal; // Primera vocal que encontramos en el ciclo: Se agrega la primera vocal encontrada en el apellido paterno.
     RFC += apellido_materno.substr(0, 1); //Se incluye la primera letra del apellido materno.
     RFC += nombre.substr(0, 1); //Inicial del nombre ,es decir, se añade la primera letra del primer nombre.
     RFC += anio.substr(2, 2); //Se incorporan los dos últimos dígitos del año de nacimiento.
@@ -137,11 +136,9 @@ int main() {// Inicio de la función principal
     RFC += mes; // Dígitos para el mes
     RFC += dia; // Dígitos para el día
 
-    // Tipos de sentencias: cout
     // RFC sin homoclave
     cout << "Tu RFC sin homoclave es: " << RFC << endl;//Muestra el mensaje del RFC sin homoclave 
 
-    // Tipos de sentencias: cout
     // RFC con homoclave
     cout << "Tu RFC con homoclave es: " << RFC + "XXX" << endl;/*Muestra el mensaje del RFC con la homoclave,
 Constante para la Homoclave: XXX se utiliza como la homoclave constante que se agrega al final del RFC.*/
